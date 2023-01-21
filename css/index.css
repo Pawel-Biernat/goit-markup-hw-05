@@ -130,6 +130,27 @@ body {
   list-style: none;
   justify-content: space-between;
   padding-inline-start: 0px;
+  margin: 0px;
+  height: 294px;
+}
+.section-list-item {
+  position: relative;
+}
+.section-list-item > .label {
+  position: absolute;
+  bottom: 0;
+  width: 370px;
+  height: 70px;
+  background-color: rgba(47, 48, 58, 0.8);
+  font-weight: 700;
+  font-size: 14px;
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 27px 90px;
+  margin: 0px;
 }
 .project-name {
   display: flex;
@@ -153,7 +174,15 @@ body {
 .project-item {
   flex-basis: calc(100% - 30px) / 3;
 }
+.project-picture {
+  position: relative;
+  overflow: hidden;
+}
 .project-item:hover {
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.project-picture:hover .project-overlay {
+  transform: translatey(0);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 .project-name h4 {
@@ -163,8 +192,31 @@ body {
   margin: 0;
 }
 .project-name p {
-  margin-top: 4px;
-  margin-bottom: 0;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.project-overlay {
+  position: absolute;
+  width: 370px;
+  height: 294px;
+  margin-left: 0px;
+  margin-right: 0px;
+  top: 0px;
+  left: 0%;
+  background-color: rgba(33, 150, 243, 0.9);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+  transform: translatey(100%);
+  transition: transform 250ms ease-in;
+}
+.project-overlay p {
+  margin: 0px;
+}
+.project-overlay > p {
+  font-weight: 400;
+  font-size: 18px;
+  color: #ffffff;
+  padding: 49px 45px 49px 24px;
 }
 .team-member {
   display: flex;
@@ -308,7 +360,7 @@ body {
 .navigation-item {
   display: flex;
   list-style: none;
-  margin: 32px 250px 32px 93px;
+  margin: 32px 250px 0px 93px;
   gap: 46px;
 }
 .navigation-links a {
@@ -321,6 +373,23 @@ body {
 .navigation-links li :hover,
 .navigation-links li :focus {
   color: #2196f3;
+}
+/*niebeieska kreska pod aktualną stroną*/
+.navigation-active-site::after {
+  content: "";
+  display: flex;
+  margin-top: 28px;
+  width: 53px;
+  height: 4px;
+  background-color: #2196f3;
+}
+.navigation-active-portfolio::after {
+  content: "";
+  display: flex;
+  margin-top: 28px;
+  width: 58px;
+  height: 4px;
+  background-color: #2196f3;
 }
 /*logo WebStudio*/
 .logo {
@@ -402,4 +471,48 @@ body {
 .footer-position {
   display: flex;
   gap: 70px;
+}
+.is-hidden {
+  pointer-events: none;
+  visibility: hidden;
+  opacity: 0;
+}
+/*okienko modalne i tło do niego*/
+.modal {
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+}
+.modal-window {
+  left: 536px;
+  top: 221px;
+  width: 528px;
+  height: 581px;
+  border-radius: 4px;
+  z-index: 1;
+  background-color: #ffffff;
+  position: fixed;
+}
+.modal-window button {
+  width: 30px;
+  height: 30px;
+  padding: 0px;
+  border-radius: 50%;
+  margin-top: 8px;
+  margin-left: 490px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 1);
+  display: block;
+}
+.modal-window button:hover,
+.modal-window button :focus {
+  background-color: rgba(255, 255, 255, 1);
+}
+.modal-window svg {
+  display: block;
+  width: 18px;
+  height: 18px;
+  margin: 5px;
 }
