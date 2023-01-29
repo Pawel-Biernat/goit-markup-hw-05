@@ -483,7 +483,6 @@ body {
 .is-hidden {
   pointer-events: none;
   visibility: hidden;
-  opacity: 0;
 }
 .is-hidden .modal-window {
   transform: scale(0);
